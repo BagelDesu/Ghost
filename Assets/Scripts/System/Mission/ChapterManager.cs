@@ -20,7 +20,7 @@ public class ChapterManager : MonoBehaviour
 
     private int currentAudio = 0;
 
-    private List<Objective> objectives = new List<Objective>();
+    private List<Objective> chapterObjectives = new List<Objective>();
     // EVENTS
 
     public UnityEvent OnChapterStart;
@@ -35,21 +35,6 @@ public class ChapterManager : MonoBehaviour
 
     public void StartChapter(ChapterStruct data)
     {
-
-        // wrong way to keep track and enforce our objectives, will need to refract this later.
-        // keeping it here for reference.
-        if (objectives.Count > 0)
-        {
-            foreach (Objective obj in objectives)
-            {
-                if (!obj.IsObjectiveCompleted)
-                {
-                    
-                    return;
-                }
-            }
-        }
-
         // this starts the chapter, we need to check if there are any pre-dialouges in it before we can move forward.
         if (data.preChapterDialouges.Length > 0)
         {
@@ -66,7 +51,7 @@ public class ChapterManager : MonoBehaviour
     IEnumerator PreDialougedChapter(ChapterStruct data)
     {
         // make sure we wait for the audio to stop playing, if there is one.
-        yield return new WaitUntil(() => { return !dialougeSource.isPlaying; });
+        yield return new WaitUntil(() => { return !dialougeSource.isPlaying;});
 
         // assign the clip
         dialougeSource.clip = data.preChapterDialouges[currentAudio];

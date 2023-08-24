@@ -67,7 +67,6 @@ public class StoryManager : MonoBehaviour
 
         // Automatically advances the chapter to the next assigned one after it completes.
         chapterManager.OnChapterComplete.AddListener(AdvanceStory);
-        StartStory();
     }
 
     public void StartStory()
