@@ -14,11 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzles:
   - {fileID: 11400000, guid: c1700615f3f8a804ea71fc515962dc44, type: 2}
-  preChapterDialouges:
-  - {fileID: 8300000, guid: 8234a1f2244b69e46bbcfa7ce41d4c1c, type: 3}
-  - {fileID: 8300000, guid: 61f0cb183a63cce40b593aaa5121efb5, type: 3}
-  - {fileID: 8300000, guid: 556cbfb4685fb0842ab06aefef2a54ad, type: 3}
-  - {fileID: 8300000, guid: dd0f5ffe5d1ec094bac68688c7e460fa, type: 3}
-  - {fileID: 8300000, guid: 31c2511f365fdc84895dbfa774c4ef91, type: 3}
-  - {fileID: 8300000, guid: 469e796fc9667f14685632d8011357cd, type: 3}
+  preChapterDialouges: []
   postChapterDialouges: []

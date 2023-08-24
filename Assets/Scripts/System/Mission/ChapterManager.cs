@@ -15,11 +15,6 @@ public class ChapterManager : MonoBehaviour
 
     private bool isChapterFresh = true;
 
-    [SerializeField]
-    private AudioSource dialougeSource;
-
-    private int currentAudio = 0;
-
     private List<Objective> chapterObjectives = new List<Objective>();
     // EVENTS
 
@@ -50,28 +45,11 @@ public class ChapterManager : MonoBehaviour
 
     IEnumerator PreDialougedChapter(ChapterStruct data)
     {
+        DialougeManager.Instance.LoadDialougeClipsBehind(new List<AudioClip>(data.preChapterDialouges), false, true);
         // make sure we wait for the audio to stop playing, if there is one.
-        yield return new WaitUntil(() => { return !dialougeSource.isPlaying;});
+        yield return new WaitUntil(() => { return DialougeManager.Instance.IsQueueEmpty;});
 
-        // assign the clip
-        dialougeSource.clip = data.preChapterDialouges[currentAudio];
-
-        // play it
-        dialougeSource.Play();
-
-        // increase our counter keeping track of which dialouge is playing
-        currentAudio++;
-
-        // check if we have any remaining dialouges left, if not load the puzzle, else start a recursion and try again.
-        if (currentAudio < data.preChapterDialouges.Length)
-        {
-            StartCoroutine(PreDialougedChapter(data));
-        }
-        else
-        {
-            yield return new WaitUntil(() => { return !dialougeSource.isPlaying; });
-            LoadPuzzles(data.puzzles);
-        }
+        LoadPuzzles(data.puzzles);
     }
 
     private void LoadPuzzles(PuzzleStruct[] data)
@@ -114,9 +92,6 @@ public class ChapterManager : MonoBehaviour
 
                 break;
         }
-
-        //reset the audio counter
-        currentAudio = 0;
 
         // reset chapter status
         isChapterFresh = true;

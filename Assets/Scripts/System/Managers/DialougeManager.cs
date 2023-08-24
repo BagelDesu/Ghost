@@ -5,58 +5,98 @@ using UnityEngine.Events;
 
 public class DialougeManager : MonoBehaviour
 {
-    private bool playingCheck;
     private List<AudioClip> clipQueue = new List<AudioClip>();
+    private int audioCount = 0;
 
+    private Coroutine currentPlayingCoroutine;
+
+    [SerializeField]
     private AudioSource dialougeSource;
-    private UnityEvent OnDialougeFinished;
+
+    public bool IsQueueEmpty { get { return isQueueEmpty; } private set { isQueueEmpty = value; } }
+
+    private bool isQueueEmpty = false;
+    public static DialougeManager Instance
+    {
+        get
+        {
+            return instance;
+        }
+        private set
+        {
+            instance = value;
+        }
+    }
+
+    private static DialougeManager instance;
 
     private void Awake()
     {
-        OnDialougeFinished.AddListener(PlayClip);
-    }
-
-    private void Start()
-    {
-        dialougeSource = GetComponent<AudioSource>();
-        playingCheck = false;
-    }
-
-    private void Update()
-    {
-        if (!dialougeSource.isPlaying && playingCheck)
+        if (instance != null)
         {
-            OnDialougeFinished?.Invoke();
-            playingCheck = false;
+            Debug.Log("Multiple Singletons detected, deleting object. Please remove extra singleton from scene", this);
+            Destroy(this.gameObject);
+            return;
         }
+
+        Instance = this;
     }
 
-    public void QueueDialougeClip(bool jumpQueue, AudioClip clip)
+
+    /// <summary>
+    /// Loads the dialouge clip at the end of the queue.
+    /// </summary>
+    /// <param name="clips">clips to load</param>
+    /// <param name="clearQueue">should we clear the current queue? DOES NOT STOP THE CURRENT AUDIO</param>
+    /// <param name="playOnLoad">plays as soon as the clips are ready, DOES NOT DO ANYTHING IF THE AUDIO IS ALREADY PLAYING</param>
+    public void LoadDialougeClipsBehind(List<AudioClip> clips, bool clearQueue, bool playOnLoad)
     {
-        if (jumpQueue)
+        if (clearQueue)
         {
-            clipQueue.Insert(0, clip);
+            clipQueue.Clear();
         }
-        clipQueue.Add(clip);
+
+        clipQueue.AddRange(clips);
+
+        if (playOnLoad && !dialougeSource.isPlaying)
+        {
+            if (currentPlayingCoroutine != null)
+            {
+                StopCoroutine(currentPlayingCoroutine);
+            }
+
+            currentPlayingCoroutine = StartCoroutine(PlayOnDialougeFinished());
+        }
+
+        isQueueEmpty = false;
     }
 
-    private void PlayClip()
+    private IEnumerator PlayOnDialougeFinished()
     {
-        if (clipQueue.Count > 0)
+        if (audioCount >= clipQueue.Count)
         {
-            dialougeSource.clip = clipQueue[clipQueue.Count - 1];
+            yield return new WaitUntil(() => { return !dialougeSource.isPlaying; });
+
+            audioCount = 0;
+            clipQueue.Clear();
+            isQueueEmpty = true;
+
+            yield break;
         }
-        
-        clipQueue.RemoveAt(0);
+
+        yield return new WaitUntil(() => { return !dialougeSource.isPlaying; });
+
+        dialougeSource.clip = clipQueue[audioCount];
         dialougeSource.Play();
-        playingCheck = true;
+
+        audioCount++;
+
+        currentPlayingCoroutine = StartCoroutine(PlayOnDialougeFinished());
     }
 
-    public void PlayClip(AudioClip clip)
+    public void LoadDialougeClipsAhead()
     {
-        dialougeSource.Stop();
-        dialougeSource.clip = clip;
-        dialougeSource.Play();
-        playingCheck = true;
+
     }
+
 }
