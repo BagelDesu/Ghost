@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6139e0e6e5c8b4694215088044f08f, type: 3}
+  m_Name: Chapter_Intro_Single
+  m_EditorClassIdentifier: 
+  puzzles:
+  - {fileID: 11400000, guid: c1700615f3f8a804ea71fc515962dc44, type: 2}
+  preChapterDialouges:
+  - {fileID: 8300000, guid: 8234a1f2244b69e46bbcfa7ce41d4c1c, type: 3}
+  - {fileID: 8300000, guid: 61f0cb183a63cce40b593aaa5121efb5, type: 3}
+  - {fileID: 8300000, guid: 556cbfb4685fb0842ab06aefef2a54ad, type: 3}
+  - {fileID: 8300000, guid: dd0f5ffe5d1ec094bac68688c7e460fa, type: 3}
+  - {fileID: 8300000, guid: 31c2511f365fdc84895dbfa774c4ef91, type: 3}
+  - {fileID: 8300000, guid: 469e796fc9667f14685632d8011357cd, type: 3}
+  postChapterDialouges: []
