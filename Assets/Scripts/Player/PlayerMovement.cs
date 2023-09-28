@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float sprintMultiplier = 1f;
     public float rotationSpeed = 5f;
     public float gravityValue = -9.81f;
+    public float playerMass = 1f;
 
     private CharacterController Controller = null;
     private float originalSpeed = 5f;
@@ -32,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
             playerVelocity.y = 0f;
         }
         ConsumeMovement();
-        playerVelocity.y += gravityValue * Time.deltaTime;
+        playerVelocity.y += (gravityValue * playerMass) * Time.deltaTime;
         Controller.Move(playerVelocity * Time.deltaTime);
     }
 

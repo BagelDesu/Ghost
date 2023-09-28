@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1197578342659994836}
   - component: {fileID: 514202660}
   - component: {fileID: 514202661}
+  - component: {fileID: 2004873656}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -227,9 +228,21 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1197578342659994836}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
         m_MethodName: OnInteractKeyPress
-        m_Mode: 1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 514202661}
+        m_TargetAssemblyTypeName: HeldItem, Assembly-CSharp
+        m_MethodName: UseHeldTool
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -277,6 +290,7 @@ MonoBehaviour:
   sprintMultiplier: 2
   rotationSpeed: 5
   gravityValue: -9.81
+  playerMass: 1
 --- !u!114 &1197578342659994836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +306,7 @@ MonoBehaviour:
   RaycastMask:
     serializedVersion: 2
     m_Bits: 1024
-  RaycastMaxRange: 2
+  RaycastMaxRange: 4
   RaycastOrigin: {fileID: 0}
 --- !u!114 &514202660
 MonoBehaviour:
@@ -306,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2bc94d6eef393f4eb212e6735c3cba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeldItem: {fileID: 0}
+  HeldItem: {fileID: 514202661}
 --- !u!114 &514202661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,3 +334,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RightHand: {fileID: 0}
+--- !u!114 &2004873656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295448457602740557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3193a39f18b84c499bf0582c8ab288e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletOrigin: {fileID: 0}
+  projectilePrefab: {fileID: 8153334846637950946, guid: 30fb2a392342b4d4ea0f76233573f4ec,
+    type: 3}
