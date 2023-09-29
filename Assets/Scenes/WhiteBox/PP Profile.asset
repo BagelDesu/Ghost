@@ -207,11 +207,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   threshold:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1.24
   intensity:
     m_OverrideState: 1
-    m_Value: 2.95
+    m_Value: 1.73
   scatter:
     m_OverrideState: 1
     m_Value: 0.749
@@ -231,5 +231,5 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {fileID: 2800000, guid: b72c8096dedef7543b43e77126092fc6, type: 3}
   dirtIntensity:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 5.3
