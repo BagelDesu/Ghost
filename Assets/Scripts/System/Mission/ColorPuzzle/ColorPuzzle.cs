@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-
-/// [ UNDER DEPRICATION ]
 /// <summary>
 /// Handles the control of the puzzles currently happening
 /// </summary>
-public class PuzzleManager : MonoBehaviour
+public class ColorPuzzle : MonoBehaviour
 {
     // EXTERNAL
-
     [SerializeField]
     private Screen directionScreen;
     [SerializeField]
@@ -121,7 +118,7 @@ public class PuzzleManager : MonoBehaviour
                     answers.Add(true);
                 }
                 else
-                {                          
+                {
                     answers.Add(false);
                 }
                 puzzleLength--;
@@ -179,7 +176,7 @@ public class PuzzleManager : MonoBehaviour
     /// </summary>
     private void FailedSolve()
     {
-        
+
         // stops the puzzle.
         //isPuzzleOngoing = false;
 
@@ -220,7 +217,7 @@ public class PuzzleManager : MonoBehaviour
         puzzleTimer = puzzlesLoaded[currentPuzzle].time;
 
         // if we need a timer. If the data reads anything 0 and below, it means that no timer is needed.
-        if(puzzleTimer > 0)
+        if (puzzleTimer > 0)
         {
             shouldUseTimer = true;
         }

@@ -8,7 +8,7 @@ public class Button : MonoBehaviour
     private CustomColor solveAnswer;
 
     [SerializeField]
-    private PuzzleManager puzzleManager;
+    private ColorPuzzle puzzleManager;
     public void SendSolve()
     {
         puzzleManager.AddAnswer(solveAnswer);
