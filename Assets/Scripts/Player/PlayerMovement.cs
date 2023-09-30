@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         originalSpeed = speed;
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
         Controller = GetComponent<CharacterController>();
         camTransform = Camera.main.transform;
     }
