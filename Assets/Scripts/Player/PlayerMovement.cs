@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -17,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movedir = new Vector2();
     private Vector2 rotdir = new Vector2();
     private Transform camTransform;
+
+    public UnityEvent PlayerMoving;
+    public UnityEvent PlayerStopped;
 
     public void Awake()
     {
@@ -58,6 +62,19 @@ public class PlayerMovement : MonoBehaviour
         if (context.action.WasReleasedThisFrame())
         {
             speed = originalSpeed;
+        }
+    }
+
+    public void MovementCheck(InputAction.CallbackContext context)
+    {
+        if (context.action.WasPressedThisFrame())
+        {
+            PlayerMoving?.Invoke();
+        }
+
+        if (context.action.WasReleasedThisFrame())
+        {
+            PlayerStopped?.Invoke();
         }
     }
 

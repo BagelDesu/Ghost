@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     public void ExitGame()
     {
-
+        Application.Quit();
     }
 
     private void StartEnd(int endCode)

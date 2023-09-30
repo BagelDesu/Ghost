@@ -57,7 +57,7 @@ public class ColorPuzzle : MonoBehaviour
         // Registering our listeners.
         OnSuccessfulSolve.AddListener(SuccessfulSolve);
         OnFailedSolve.AddListener(FailedSolve);
-        OnTimerEnd.AddListener(FailedSolve);
+        OnTimerEnd.AddListener(TimerFailedSolve);
     }
 
     private void Update()
@@ -142,7 +142,6 @@ public class ColorPuzzle : MonoBehaviour
         if (answers.Contains(false))
         {
             OnFailedSolve?.Invoke();
-            OnFinishedPuzzles?.Invoke(1);
         }
         else
         {
@@ -176,12 +175,25 @@ public class ColorPuzzle : MonoBehaviour
     /// </summary>
     private void FailedSolve()
     {
-
-        // stops the puzzle.
-        //isPuzzleOngoing = false;
-
-        //Debug to continue even after a fail
         colorAnswers = new List<CustomColor>();
+    }
+
+    private void TimerFailedSolve()
+    {
+        isPuzzleOngoing = false;
+
+        currentPuzzle++;
+
+        if (currentPuzzle < puzzlesLoaded.Length)
+        {
+            // more puzzles to be done
+            StartPuzzle();
+            //shouldUseTimer = true;
+        }
+        else
+        {
+            OnFinishedPuzzles?.Invoke(0);
+        }
     }
 
     /// <summary>
@@ -220,6 +232,7 @@ public class ColorPuzzle : MonoBehaviour
         if (puzzleTimer > 0)
         {
             shouldUseTimer = true;
+            timeSinceLastCountdown = Time.time;
         }
 
         // set up the timer screen and start it.

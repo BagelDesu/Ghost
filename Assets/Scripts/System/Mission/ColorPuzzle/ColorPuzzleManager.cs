@@ -49,22 +49,20 @@ public class ColorPuzzleManager : MonoBehaviour
         {
             // if the puzzles were a success we want to continue it until there are no more puzzles.
             case 0:
-                if (currentChapter >= playableChapters.Length)
+                if (currentChapter > playableChapters.Length)
                 {
                     // if the player was able to advance the chapters all the way through it's a good end aka open the door.
                     OnChapterSuccess?.Invoke();
-                    currentChapter = 0;
+                    puzzleManager.ResetPuzzle();
                 }
                 break;
             // if the player gives the wrong answer give a "fail" flag.
             case 1:
                 //OnChapterFail?.Invoke();
-                //currentChapter = 0;
                 break;
             // if the player runs out of time, give a "fail" flag.
             case 2:
                 //OnChapterFail?.Invoke();
-                //currentChapter = 0;
 
                 break;
             default:
