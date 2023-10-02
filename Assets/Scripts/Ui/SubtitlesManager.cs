@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class SubtitlesManager : MonoBehaviour
@@ -14,6 +15,12 @@ public class SubtitlesManager : MonoBehaviour
     private string[] loadedTexts;
     private int currentText;
 
+    [SerializeField]
+    private bool shouldPauseGame;
+
+    [SerializeField]
+    private UnityEvent OnWindowOpen;
+
     public void LoadText(string[] textList)
     {
         loadedTexts = textList;
@@ -24,6 +31,11 @@ public class SubtitlesManager : MonoBehaviour
             subtitleGO.SetActive(true);
         }
         AdvanceText();
+        OnWindowOpen?.Invoke();
+        if (shouldPauseGame)
+        {
+            GameManager.Instance.PauseGame();
+        }
     }
 
 
@@ -51,6 +63,10 @@ public class SubtitlesManager : MonoBehaviour
             }
             else
             {
+                if (shouldPauseGame)
+                {
+                    GameManager.Instance.ResumeGame();
+                }
                 ResetSubtitles();
                 subtitleGO.SetActive(false);
             }
@@ -88,6 +104,10 @@ public class SubtitlesManager : MonoBehaviour
         }
         else
         {
+            if (shouldPauseGame)
+            {
+                GameManager.Instance.ResumeGame();
+            }
             ResetSubtitles();
             subtitleGO.SetActive(false);
         }

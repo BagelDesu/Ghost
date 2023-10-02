@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+
+    public UnityEvent OnGamePaused;
+    public UnityEvent OnGameResumed;
+
     public static GameManager Instance
     {
         get
@@ -29,6 +34,18 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        OnGamePaused?.Invoke();
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        OnGameResumed?.Invoke();
     }
 
     public void StartGame()
