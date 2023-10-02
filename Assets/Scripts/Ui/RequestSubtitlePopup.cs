@@ -6,6 +6,7 @@ using UnityEngine;
 public class RequestSubtitlePopup : MonoBehaviour
 {
     [SerializeField]
+    [TextArea]
     private string[] subtitleRequest;
 
     [SerializeField]
