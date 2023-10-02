@@ -11,6 +11,8 @@ public class PlayerInteraction : MonoBehaviour
     public float RaycastMaxRange;
     public GameObject RaycastOrigin;
 
+    private bool shouldLockInteractions;
+
     private bool isPlayerLookingAtInteractObject = false;
     private InteractableObject interactableObject;
     private void FixedUpdate()
@@ -48,9 +50,19 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    public void LockInteractions()
+    {
+        shouldLockInteractions = true;
+    }
+
+    public void UnlockInteractions()
+    {
+        shouldLockInteractions = false;
+    }
+
     public void OnInteractKeyPress(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && !shouldLockInteractions)
         {
             if (interactableObject != null && isPlayerLookingAtInteractObject)
             {
