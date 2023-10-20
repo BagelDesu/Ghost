@@ -28,5 +28,14 @@ namespace BagelDesu.Systems.Collisions
         {
             isPlayerInRange = status;
         }
+
+        public void SetPlayerInRangeTrue()
+        {
+            isPlayerInRange = true;
+        }
+        public void SetPlayerInRangeFalse()
+        {
+            isPlayerInRange = false;
+        }
     }
 }

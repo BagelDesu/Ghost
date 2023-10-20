@@ -17,8 +17,30 @@ namespace BagelDesu.Systems.Collisions
         private UnityEvent Event_PlayerEnter;
         [SerializeField]
         private UnityEvent Event_PlayerExit;
+
+        [SerializeField]
+        private bool findAllInteractableObjects = false;
+
         [SerializeField]
         private LayerMask BlacklistedLayers;            //TODO: Implement Layer filtering.
+
+        private void Start()
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.useGravity = false;
+            rb.isKinematic = true;
+
+            if (findAllInteractableObjects)
+            {
+                InteractableObject[] interactableObjects = gameObject.transform.parent.GetComponentsInChildren<InteractableObject>(true);
+
+                foreach (InteractableObject obj in interactableObjects)
+                {
+                    Event_PlayerEnter.AddListener(obj.SetPlayerInRangeTrue);
+                    Event_PlayerExit.AddListener(obj.SetPlayerInRangeFalse);
+                }
+            }
+        }
 
         private void OnTriggerEnter(Collider other)
         {
