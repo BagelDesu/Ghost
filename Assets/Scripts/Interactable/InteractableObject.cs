@@ -13,12 +13,14 @@ namespace BagelDesu.Systems.Collisions
         [SerializeField]
         private bool isPlayerInRange = false;
 
+        private bool isInteractionLocked = false;
+
         public string InteractionTooltip;
         public Sprite InteractionImage;
         
         public void InvokeInteractions()
         {
-            if (Event_Interaction != null && isPlayerInRange)
+            if (Event_Interaction != null && isPlayerInRange && !isInteractionLocked)
             {
                 Event_Interaction.Invoke();
             }
@@ -36,6 +38,11 @@ namespace BagelDesu.Systems.Collisions
         public void SetPlayerInRangeFalse()
         {
             isPlayerInRange = false;
+        }
+
+        public void SetInteractionLocked(bool status)
+        {
+            isInteractionLocked = status;
         }
     }
 }

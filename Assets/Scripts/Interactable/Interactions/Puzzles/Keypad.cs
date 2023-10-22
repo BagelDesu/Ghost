@@ -6,8 +6,9 @@ using UnityEngine.Events;
 
 public class Keypad : MonoBehaviour
 {
-    [SerializeField]
+    
     private string keypadPassword = "0000";
+    public string KeypadPassword { get { return keypadPassword; } set { keypadPassword = value; } }
 
     private string currentPasswordGuess = "";
 

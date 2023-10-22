@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum ActorName
 {
@@ -10,6 +11,10 @@ public enum ActorName
     KINGINYELLOW
 }
 
+/// <summary>
+///  need to re-write/re-factor this class when i solidify the theater manager class.
+///  a lot of un-needed repetition.
+/// </summary>
 public class Actor : MonoBehaviour
 {
     /// <summary>
@@ -19,6 +24,9 @@ public class Actor : MonoBehaviour
     private int currentPosition = -1;
 
     public int CurrentPosition { get { return currentPosition; } private set { currentPosition = value; } }
+
+    private bool isActorLocked = false;
+
 
     /// <summary>
     /// what we spawn in based on which position the actor is in. co-related to the "currentPosition" of the actor.
@@ -30,6 +38,9 @@ public class Actor : MonoBehaviour
     private ActorName actorName;
 
     public ActorName ActorName { get { return actorName; } private set { actorName = value; } }
+
+    // EXTERNAL
+    public UnityEvent OnActorAdvance;
 
     private void Start()
     {
@@ -71,17 +82,7 @@ public class Actor : MonoBehaviour
     /// </summary>
     public void AdvanceActor()
     {
-        currentPosition++;
-        if (currentPosition >= actorPrefabs.Count)
-        {
-            DisableActor();
-            return;
-        }
-        foreach (GameObject actorPos in actorPrefabs)
-        {
-            actorPos.SetActive(false);
-        }
-        actorPrefabs[currentPosition].SetActive(true);
+        StartCoroutine(DelayedAdvance());
     }
 
     /// <summary>
@@ -99,5 +100,33 @@ public class Actor : MonoBehaviour
             actorPos.SetActive(false);
         }
         actorPrefabs[currentPosition].SetActive(true);
+    }
+
+    private IEnumerator DelayedAdvance()
+    {
+        yield return new WaitUntil(() => { return !isActorLocked; });
+
+        currentPosition++;
+        if (currentPosition >= actorPrefabs.Count)
+        {
+            DisableActor();
+            yield break;
+        }
+
+        foreach (GameObject actorPos in actorPrefabs)
+        {
+            actorPos.SetActive(false);
+        }
+        actorPrefabs[currentPosition].SetActive(true);
+    }
+
+    public void LockActor()
+    {
+        isActorLocked = true;
+    }
+
+    public void UnlockActor()
+    {
+        isActorLocked = false;
     }
 }

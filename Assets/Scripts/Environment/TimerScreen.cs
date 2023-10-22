@@ -13,6 +13,11 @@ public class TimerScreen : MonoBehaviour
         text.text = timer.ToString();
     }
 
+    public void UpdateText(string timer)
+    {
+        text.text = timer;
+    }
+
     public void ResetText()
     {
         text.text = "0";
