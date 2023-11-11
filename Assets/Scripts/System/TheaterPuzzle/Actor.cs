@@ -25,7 +25,8 @@ public class Actor : MonoBehaviour
 
     public int CurrentPosition { get { return currentPosition; } private set { currentPosition = value; } }
 
-    private bool isActorLocked = false;
+    [SerializeField]
+    private Curtains curtain;
 
 
     /// <summary>
@@ -104,7 +105,7 @@ public class Actor : MonoBehaviour
 
     private IEnumerator DelayedAdvance()
     {
-        yield return new WaitUntil(() => { return !isActorLocked; });
+        yield return new WaitUntil(() => { return curtain.IsCurtainOpen == false; });
 
         currentPosition++;
         if (currentPosition >= actorPrefabs.Count)
@@ -118,15 +119,5 @@ public class Actor : MonoBehaviour
             actorPos.SetActive(false);
         }
         actorPrefabs[currentPosition].SetActive(true);
-    }
-
-    public void LockActor()
-    {
-        isActorLocked = true;
-    }
-
-    public void UnlockActor()
-    {
-        isActorLocked = false;
     }
 }

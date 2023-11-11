@@ -21,6 +21,9 @@ public class TheaterManager : MonoBehaviour
     [SerializeField]
     private TimerScreen[] theaterScreens;
 
+    [SerializeField]
+    private Curtains curtain;
+
     // INTERNAL
     /// <summary>
     /// internal dictionary that will be used for ease of indexing.
@@ -82,22 +85,32 @@ public class TheaterManager : MonoBehaviour
 
     private void AdvanceSet()
     {
-        sets[currentSet].gameObject.SetActive(false);
         theaterScreens[currentSet].UpdateText(keypadPassword[currentSet].ToString());
-        currentSet++;
+        StartCoroutine(DelayedAdvanceSet());
+    }
 
+    private IEnumerator DelayedAdvanceSet()
+    {
+        yield return new WaitUntil(() => { return curtain.IsCurtainOpen == false; });
+        sets[currentSet].gameObject.SetActive(false);
+        currentSet++;
         if (currentSet >= sets.Count && setFinished == false)
         {
             OnPuzzleFinished?.Invoke();
             setFinished = true;
-            return;
+            yield break;
         }
-
         sets[currentSet].gameObject.SetActive(true);
     }
 
     public void ResetPuzzle()
     {
+        StartCoroutine(DelayedResetPuzzle());
+    }
+
+    private IEnumerator DelayedResetPuzzle()
+    {
+        yield return new WaitUntil( () => { return curtain.IsCurtainOpen == false; });
         foreach (Actor item in actors)
         {
             item.DisableActor();

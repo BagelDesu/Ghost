@@ -21,6 +21,9 @@ public class Curtains : MonoBehaviour
 
     public UnityEvent OnCurtainClosed;
 
+    private bool isCurtainOpen = true;
+    public bool IsCurtainOpen { get { return isCurtainOpen; } private set { isCurtainOpen = value; } }
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -29,6 +32,8 @@ public class Curtains : MonoBehaviour
     public void CurtainFinishedSwitch()
     {
         OnCurtainFinishedSwitch?.Invoke();
+        isCurtainOpen = true;
+
     }
 
     public void CurtainStartedSwitch()
@@ -39,5 +44,6 @@ public class Curtains : MonoBehaviour
     public void CurtainSwitchClosed()
     {
         OnCurtainSwitchClosed?.Invoke();
+        isCurtainOpen = false;
     }
 }
