@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -152,7 +152,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!224 &1697506929
 RectTransform:
@@ -246,7 +246,7 @@ PrefabInstance:
     - target: {fileID: 4070734016978121690, guid: ef27e2bc182290242b86213e04292e28,
         type: 3}
       propertyPath: m_Name
-      value: Vintage tv_02 (4) Variant
+      value: timer_screen
       objectReference: {fileID: 0}
     - target: {fileID: 4410018568492580106, guid: ef27e2bc182290242b86213e04292e28,
         type: 3}
@@ -255,52 +255,82 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4410018568492580106, guid: ef27e2bc182290242b86213e04292e28,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.4053998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410018568492580106, guid: ef27e2bc182290242b86213e04292e28,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.796
+      value: 2.4555037
       objectReference: {fileID: 0}
     - target: {fileID: 4410018568492580106, guid: ef27e2bc182290242b86213e04292e28,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.25
+      value: 11.532
       objectReference: {fileID: 0}
     - target: {fileID: 4410018568492580106, guid: ef27e2bc182290242b86213e04292e28,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.422
+      value: 3.857
       objectReference: {fileID: 0}
     - target: {fileID: 4410018568492580106, guid: ef27e2bc182290242b86213e04292e28,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5010713
+      value: 0.33531454
       objectReference: {fileID: 0}
     - target: {fileID: 4410018568492580106, guid: ef27e2bc182290242b86213e04292e28,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.6225465
       objectReference: {fileID: 0}
     - target: {fileID: 4410018568492580106, guid: ef27e2bc182290242b86213e04292e28,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8654061
+      value: 0.6225465
       objectReference: {fileID: 0}
     - target: {fileID: 4410018568492580106, guid: ef27e2bc182290242b86213e04292e28,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.33531454
       objectReference: {fileID: 0}
     - target: {fileID: 4410018568492580106, guid: ef27e2bc182290242b86213e04292e28,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 56.615
       objectReference: {fileID: 0}
     - target: {fileID: 4410018568492580106, guid: ef27e2bc182290242b86213e04292e28,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 119.858
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 4410018568492580106, guid: ef27e2bc182290242b86213e04292e28,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5098309615093777966, guid: ef27e2bc182290242b86213e04292e28,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 5098309615093777966, guid: ef27e2bc182290242b86213e04292e28,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 9.1835e-41
+      objectReference: {fileID: 0}
+    - target: {fileID: 5098309615093777966, guid: ef27e2bc182290242b86213e04292e28,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 1.1681478e-37
+      objectReference: {fileID: 0}
+    - target: {fileID: 5098309615093777966, guid: ef27e2bc182290242b86213e04292e28,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 9.78048e-39
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781261433777899439, guid: ef27e2bc182290242b86213e04292e28,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

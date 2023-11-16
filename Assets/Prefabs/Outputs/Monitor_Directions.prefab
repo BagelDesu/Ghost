@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2321327859045851977
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2547673077717547644, guid: 527deb93608d7a84697462eea8af426e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97bcddfad86d1da4a93b0e60855234e8, type: 2}
+    - target: {fileID: 5016895319758119800, guid: 527deb93608d7a84697462eea8af426e,
+        type: 3}
+      propertyPath: m_Name
+      value: Monitor (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680243210961615298, guid: 527deb93608d7a84697462eea8af426e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680243210961615298, guid: 527deb93608d7a84697462eea8af426e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680243210961615298, guid: 527deb93608d7a84697462eea8af426e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.4999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680243210961615298, guid: 527deb93608d7a84697462eea8af426e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680243210961615298, guid: 527deb93608d7a84697462eea8af426e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071094
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680243210961615298, guid: 527deb93608d7a84697462eea8af426e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680243210961615298, guid: 527deb93608d7a84697462eea8af426e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680243210961615298, guid: 527deb93608d7a84697462eea8af426e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680243210961615298, guid: 527deb93608d7a84697462eea8af426e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680243210961615298, guid: 527deb93608d7a84697462eea8af426e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -450
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680243210961615298, guid: 527deb93608d7a84697462eea8af426e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7639751268034771807, guid: 527deb93608d7a84697462eea8af426e, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 527deb93608d7a84697462eea8af426e, type: 3}
+--- !u!1 &2654603895829891816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 351297599621982625, guid: 527deb93608d7a84697462eea8af426e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2321327859045851977}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1946980161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2654603895829891816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55eeb3ad02c166b48961ebd79367d2e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultMaterial: {fileID: 2100000, guid: 77027e68321c86a4ba96804a08b3fbe7, type: 2}
+  colourPairs: []
+  dirs:
+  - direction: 4
+    material: {fileID: 2100000, guid: 77027e68321c86a4ba96804a08b3fbe7, type: 2}
+  - direction: 0
+    material: {fileID: 2100000, guid: 97bcddfad86d1da4a93b0e60855234e8, type: 2}
+  - direction: 1
+    material: {fileID: 2100000, guid: 1b11846389bb7ea478ec779269fd80c1, type: 2}
+  - direction: 2
+    material: {fileID: 2100000, guid: 76dae4b83a65b3b42b4c9601b8e05f05, type: 2}
+  - direction: 3
+    material: {fileID: 2100000, guid: 2462b642ae233f04089ba311a7393b06, type: 2}

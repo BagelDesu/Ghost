@@ -144,7 +144,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6378072945454829860
 Transform:
@@ -189,7 +189,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1a2bb78e8938bd745b98fdb48b3fc9af, type: 2}
+  - {fileID: 2100000, guid: 51c4e4ae3c81f0748b430ef2128d6f7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -318,6 +318,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  findAllInteractableObjects: 0
   BlacklistedLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -341,7 +342,7 @@ GameObject:
   m_TagString: Mesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6378072945930817137
 Transform:
@@ -350,9 +351,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6378072945930817101}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.255615, y: -2.0365772, z: -0.19470215}
-  m_LocalScale: {x: 0.39039, y: 0.076858036, z: 0.27197}
+  m_LocalScale: {x: 0.39039, y: 0.07685803, z: 0.27197003}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6378072945454829860}
@@ -490,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 921c497af20ff804e88437ad8b3db241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solveAnswer: 0
+  solveAnswer: 2
   puzzleManager: {fileID: 0}
 --- !u!95 &6986493861045482928
 Animator:
