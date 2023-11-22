@@ -77,10 +77,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event_PlayerEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1772226224905878356}
+        m_TargetAssemblyTypeName: BagelDesu.Systems.Collisions.InteractableObject,
+          Assembly-CSharp
+        m_MethodName: SetPlayerInRange
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   Event_PlayerExit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1772226224905878356}
+        m_TargetAssemblyTypeName: BagelDesu.Systems.Collisions.InteractableObject,
+          Assembly-CSharp
+        m_MethodName: SetPlayerInRange
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   findAllInteractableObjects: 0
   BlacklistedLayers:
     serializedVersion: 2
