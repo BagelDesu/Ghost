@@ -15,13 +15,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.23305078}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.28927436}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.14406787}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.20976529}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.18534118}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -65,13 +65,13 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.18
+    m_Value: 0.32
   xMultiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.938
   yMultiplier:
     m_OverrideState: 1
-    m_Value: 0.877
+    m_Value: 0.67
   center:
     m_OverrideState: 0
     m_Value: {x: 0.5, y: 0.5}
@@ -137,7 +137,7 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.251
+    m_Value: 0.506
   response:
     m_OverrideState: 1
     m_Value: 0.233
@@ -233,10 +233,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.276
+    m_Value: 0.279
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.198
+    m_Value: 0.291
   rounded:
     m_OverrideState: 1
     m_Value: 1
