@@ -13,6 +13,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private bool shouldLockInteractions;
 
+
     private bool isPlayerLookingAtInteractObject = false;
     private InteractableObject interactableObject;
     private void FixedUpdate()
@@ -39,15 +40,17 @@ public class PlayerInteraction : MonoBehaviour
             }
             else
             {
+                Debug.Log(hit.transform.name, hit.collider);
                 isPlayerLookingAtInteractObject = false;
-               InteractTooltipUi.Instance.TurnOffInteractTooltip();
+                InteractTooltipUi.Instance.TurnOffInteractTooltip();
             }
         }
         else
         {
             isPlayerLookingAtInteractObject = false;
-           InteractTooltipUi.Instance.TurnOffInteractTooltip();
+            InteractTooltipUi.Instance.TurnOffInteractTooltip();
         }
+
     }
 
     public void LockInteractions()
