@@ -65552,7 +65552,7 @@ PrefabInstance:
     - target: {fileID: 1643734324977683152, guid: a8273b0b57dc43c48aaaeb06feb2d64a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1643734324977683158, guid: a8273b0b57dc43c48aaaeb06feb2d64a,
         type: 3}
@@ -80598,6 +80598,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1418617468}
     m_Modifications:
+    - target: {fileID: 1499371658793067468, guid: d01701ad5c1e51f4aa38edd9b6fa41fa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5956181064499446454, guid: d01701ad5c1e51f4aa38edd9b6fa41fa,
         type: 3}
       propertyPath: m_RootOrder
@@ -80657,6 +80662,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Laboratories_Sign
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477103918807881740, guid: d01701ad5c1e51f4aa38edd9b6fa41fa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970076562722882958, guid: d01701ad5c1e51f4aa38edd9b6fa41fa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450041427825451221, guid: d01701ad5c1e51f4aa38edd9b6fa41fa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d01701ad5c1e51f4aa38edd9b6fa41fa, type: 3}
