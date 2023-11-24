@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 169012878}
   - component: {fileID: 169012880}
   - component: {fileID: 169012879}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Interactable_Collider
   m_TagString: Mesh
   m_Icon: {fileID: 0}
