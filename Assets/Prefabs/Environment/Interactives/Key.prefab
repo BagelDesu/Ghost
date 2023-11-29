@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1923987338}
   - component: {fileID: 1923987340}
   - component: {fileID: 1923987339}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: InteractableCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,10 +77,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event_PlayerEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3469287837971818188}
+        m_TargetAssemblyTypeName: BagelDesu.Systems.Collisions.InteractableObject,
+          Assembly-CSharp
+        m_MethodName: SetPlayerInRange
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   Event_PlayerExit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3469287837971818188}
+        m_TargetAssemblyTypeName: BagelDesu.Systems.Collisions.InteractableObject,
+          Assembly-CSharp
+        m_MethodName: SetPlayerInRange
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   findAllInteractableObjects: 0
   BlacklistedLayers:
     serializedVersion: 2
@@ -115,7 +141,7 @@ Transform:
   m_GameObject: {fileID: 1040497036945446756}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -1.9427509, y: 4.5180273, z: -6}
-  m_LocalScale: {x: 0.42548, y: 0.42548, z: 0.42548}
+  m_LocalScale: {x: 0.42548, y: 0.42548, z: 0.42547998}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1923987337}
@@ -182,10 +208,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.15216906
-  m_Height: 0.72241503
+  m_Radius: 0.15216908
+  m_Height: 0.72241527
   m_Direction: 1
-  m_Center: {x: 0, y: -0.0016187575, z: 0.014472415}
+  m_Center: {x: -9.53167e-10, y: -0.001618758, z: 0.01447242}
 --- !u!114 &3469287837971818188
 MonoBehaviour:
   m_ObjectHideFlags: 0
