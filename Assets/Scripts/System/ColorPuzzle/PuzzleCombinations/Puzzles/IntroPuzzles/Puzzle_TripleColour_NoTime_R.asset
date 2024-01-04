@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   colors: 010000000000000002000000
-  direction: 2
+  direction: 3
+  successDialouge: {fileID: 0}
+  failDialouge: {fileID: 0}

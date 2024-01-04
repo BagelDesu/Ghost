@@ -2,43 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[System.Serializable]
-public struct MaterialColorPairs
+public abstract class Screen : MonoBehaviour
 {
-    public CustomColor color;
-    public Material material;
-}
-
-public class Screen : MonoBehaviour
-{
-    [SerializeField]
-    private Material DefaultMaterial;
-    [SerializeField]
-    private MaterialColorPairs[] colourPairs;
     protected MeshRenderer rend;
+    protected ColorPuzzle puzzle;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         rend = GetComponent<MeshRenderer>();
     }
-
-    public void SwitchScreen(CustomColor color)
+    protected virtual void Start()
     {
-        foreach (var item in colourPairs)
-        {
-            if (item.color == color)
-            {
-                rend.material = item.material;
-                break;
-            }
-        }
+        puzzle = FindObjectOfType<ColorPuzzle>();
     }
 
-    public virtual void SwitchScreen(CustomDir dir) { }
-
-    public virtual void ResetScreen()
-    {
-        rend.material = DefaultMaterial;
-    }
+    public abstract void SwitchScreen();
+    public abstract void SwitchScreen(CustomColor color);
+    public abstract void SwitchScreen(CustomDir dir);
+    public abstract void ResetScreen();
 }

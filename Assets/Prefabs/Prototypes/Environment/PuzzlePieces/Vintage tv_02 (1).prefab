@@ -190,7 +190,6 @@ GameObject:
   - component: {fileID: 8625037188392214252}
   - component: {fileID: 2105130468387823415}
   - component: {fileID: 829001108289145407}
-  - component: {fileID: 6934366419346576717}
   m_Layer: 0
   m_Name: Screen
   m_TagString: Untagged
@@ -263,26 +262,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6934366419346576717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6781261433777899439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dcfe7062373b294fa03ad8bd57bc6f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DefaultMaterial: {fileID: 2100000, guid: 3912fd5c30500f74bbaaa56eea560b4b, type: 2}
-  colourPairs:
-  - color: 0
-    material: {fileID: 2100000, guid: db7b273c9ccdfef4b860d6c3b5f4e61f, type: 2}
-  - color: 2
-    material: {fileID: 2100000, guid: cf3ef5d3f548c6442a98b37cae3c075c, type: 2}
-  - color: 1
-    material: {fileID: 2100000, guid: ba3f6c0f4680dc342b7c98e6082b4c81, type: 2}
 --- !u!1001 &3521338524889897530
 PrefabInstance:
   m_ObjectHideFlags: 0

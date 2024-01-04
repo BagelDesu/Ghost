@@ -126,12 +126,13 @@ GameObject:
   - component: {fileID: 6945521866079624573}
   - component: {fileID: 6399723460800765512}
   - component: {fileID: 3779667816135679711}
+  - component: {fileID: 143284511}
   m_Layer: 11
   m_Name: Monitor_Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6945521866079624573
 Transform:
@@ -198,6 +199,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &143284511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427425297744661762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55eeb3ad02c166b48961ebd79367d2e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirs:
+  - direction: 4
+    material: {fileID: 2100000, guid: ed1e5683141ba754cbd74feb1523212d, type: 2}
+  - direction: 0
+    material: {fileID: 2100000, guid: 038f137f6b0c54a4b92b509f30be6f6c, type: 2}
+  - direction: 1
+    material: {fileID: 2100000, guid: 23ceef6edc611814a945e317a58b8762, type: 2}
+  - direction: 2
+    material: {fileID: 2100000, guid: 8febf63960f6c8445917834bffb1cc3d, type: 2}
+  - direction: 3
+    material: {fileID: 2100000, guid: 5e0d4e6fc41a7c447aa724a6091c180e, type: 2}
 --- !u!1 &4401039781326280071
 GameObject:
   m_ObjectHideFlags: 0

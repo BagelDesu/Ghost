@@ -9,12 +9,12 @@ using UnityEngine.Events;
 public class ColorPuzzle : MonoBehaviour
 {
     // EXTERNAL
-    [SerializeField]
-    private Screen directionScreen;
+    [HideInInspector]
+    public Screen directionScreen;
     [SerializeField]
     private TimerScreen timerScreen;
-    [SerializeField]
-    private Screen[] colorScreens;
+    [HideInInspector]
+    public List<Screen> colorScreens;
 
     // GENERIC PRIVATE
 

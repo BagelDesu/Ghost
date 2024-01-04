@@ -94,17 +94,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 351297599621982625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dcfe7062373b294fa03ad8bd57bc6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 347909b77b3769c4483528b1ad35ebab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultMaterial: {fileID: 2100000, guid: c717303527df82344a9c4b34754f5f4c, type: 2}
   colourPairs:
   - color: 0
     material: {fileID: 2100000, guid: 0e69e1a6fbc65c74faa82435e21ee789, type: 2}
-  - color: 1
-    material: {fileID: 2100000, guid: 9ca60e3aeb5073647839c44ee57c89fb, type: 2}
   - color: 2
     material: {fileID: 2100000, guid: aedbed5d208b8da45bb1c104967e1771, type: 2}
+  - color: 1
+    material: {fileID: 2100000, guid: 9ca60e3aeb5073647839c44ee57c89fb, type: 2}
 --- !u!1 &3043473121806954788
 GameObject:
   m_ObjectHideFlags: 0

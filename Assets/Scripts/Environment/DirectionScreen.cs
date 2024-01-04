@@ -15,6 +15,12 @@ public class DirectionScreen : Screen
     private DirectionMaterialPairs[] dirs;
 
 
+    protected override void Start()
+    {
+        base.Start();
+        puzzle.directionScreen = this;
+    }
+
 
     public override void SwitchScreen(CustomDir dir)
     {
@@ -26,5 +32,24 @@ public class DirectionScreen : Screen
                 break;
             }
         }
+    }
+    public override void ResetScreen()
+    {
+        foreach (var item in dirs)
+        {
+            if (item.direction == CustomDir.NONE)
+            {
+                rend.material = item.material;
+                break;
+            }
+        }
+    }
+
+    public override void SwitchScreen()
+    {
+    }
+
+    public override void SwitchScreen(CustomColor color)
+    {
     }
 }
